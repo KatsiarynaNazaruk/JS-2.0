@@ -209,7 +209,11 @@ document.querySelector('.b-10').onclick = t10;
 
 
 function t11() {
-
+    let out = document.querySelector('.out-11');
+    let div = document.querySelectorAll('.div-11');
+    for (let i = 0; i <= div.length ; i++) {
+        out.innerHTML += div[i].innerHTML + " ";
+    }
 }
 
 document.querySelector('.b-11').onclick = t11;
@@ -222,6 +226,11 @@ document.querySelector('.b-11').onclick = t11;
 
 
 function t12() {
+    let out = document.querySelector('.out-12');
+    let div = document.querySelectorAll('.div-12');
+    for (let i = 0; i <= div.length ; i++) {
+        out = div[i].style.background = 'orange';
+    }
 
 }
 
@@ -234,7 +243,10 @@ document.querySelector('.b-12').onclick = t12;
 // применить к каждому elem[i].value, причем к value первого должно равняться 1, второго - 2, третьего - 3...
 
 function t13() {
-
+    let input = document.querySelectorAll('.i-13');
+    for (let i = 0; i <= input.length ; i++) {
+        input[i].value = i+1;
+    }
 }
 
 document.querySelector('.b-13').onclick = t13;
@@ -247,6 +259,13 @@ document.querySelector('.b-13').onclick = t13;
 
 
 function t14() {
+    let out = document.querySelector('.out-14');
+    let input = document.querySelectorAll('.i-14');
+    for (let i = 0; i <= input.length ; i++) {
+        if (input[i].checked){
+            out.innerHTML = input[i].value;
+        }
+    }
 
 }
 
@@ -259,7 +278,14 @@ document.querySelector('.b-14').onclick = t14;
 // Подсказка (10 - i) + ' ' + i
 
 function t15() {
-
+    let out = document.querySelector('.out-15');
+    let out2 = "";
+    let xxx = 0;
+    for (let i = 10; i >= 0; i-- ) {
+        out2 += `${i} ${xxx} `;
+        xxx++
+    }
+    out.innerHTML = out2 ;
 }
 
 document.querySelector('.b-15').onclick = t15;
