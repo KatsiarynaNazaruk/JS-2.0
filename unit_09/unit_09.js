@@ -3,6 +3,9 @@
 
 
 function f1() {
+    let out = document.querySelector(".out-1");
+    out.style.width = "200px";
+    out.style.height = "40px";
 
 }
 
@@ -12,7 +15,8 @@ document.querySelector('.b-1').onclick = f1;
 // По нажатию кнопки b-2 запускайте функцию f2, которая присваивает блоку out-2 класс .bg-2.
 
 function f2() {
-
+    let out = document.querySelector(".out-2");
+    out.classList.add("bg-2");
 }
 
 document.querySelector('.b-2').onclick = f2;
@@ -22,7 +26,8 @@ document.querySelector('.b-2').onclick = f2;
 // По нажатию кнопки b-3 запускайте функцию f3, которая удаляет у блока out-3 класс .bg-3.
 
 function f3() {
-
+    let out = document.querySelector(".out-3");
+    out.classList.remove("bg-3");
 }
 
 document.querySelector('.b-3').onclick = f3;
@@ -32,7 +37,8 @@ document.querySelector('.b-3').onclick = f3;
 
 
 function f4() {
-
+    let out = document.querySelector(".out-4");
+    out.classList.toggle("bg-4");
 }
 
 document.querySelector('.b-4').onclick = f4;
@@ -42,7 +48,14 @@ document.querySelector('.b-4').onclick = f4;
 // По нажатию b-5 запускайте функцию f5, которая проверяет наличие класса bg-4 у блока out-4 (да, именно bg-4 у out-4 ). Результат - true или false, выводите в out-5.
 
 function f5() {
-
+    let out5 = document.querySelector(".out-5");
+    let out4 = document.querySelector(".out-4");
+    console.log (out4.getAttribute('class'));
+    if (out4.getAttribute('class').includes("bg-4")){
+        out5.innerHTML = true;
+    } else {
+        out5.innerHTML = false;
+    }
 }
 
 document.querySelector('.b-5').onclick = f5;
@@ -52,7 +65,9 @@ document.querySelector('.b-5').onclick = f5;
 // По нажатию b-6 запускайте функцию f6, которая выводит в out-6 количество параграфов с классом p-6.
 
 function f6() {
-
+    let out = document.querySelector(".out-6");
+    let p =document.querySelectorAll(".p-6")
+    out.innerHTML = p.length;
 }
 
 document.querySelector('.b-6').onclick = f6;
@@ -65,6 +80,10 @@ let blocks7 = document.querySelectorAll('.out-7');
 
 function f7() {
     //внутри цикла blocks7[i].classList....
+    let out = document.querySelectorAll(".out-7");
+    for (let i = 0; i < out.length; i++) {
+        out[i].classList.add("bg-7");
+    }
 }
 
 document.querySelector('.b-7').onclick = f7;
@@ -77,6 +96,10 @@ let blocks8 = document.querySelectorAll('.out-8');
 
 function f8() {
     //внутри цикла blocks8[i].classList....
+    let out = document.querySelectorAll(".out-8");
+    for (let i = 0; i < out.length; i++) {
+        out[i].classList.toggle("bg-8");
+    }
 }
 
 document.querySelector('.b-8').onclick = f8;
@@ -87,6 +110,7 @@ document.querySelector('.b-8').onclick = f8;
 
 function f9() {
     //this.classList...  // все решается одной строкой
+    this.classList.add("bg-9");
 }
 
 let div9 = document.querySelectorAll('.out-9');
@@ -102,9 +126,14 @@ for (let i = 0; i < div9.length; i++) {
 //let div10 = тут получите все out-10
 
 function f10() {
-
+this.classList.toggle("bg-10");
 }
 
+let div10 = document.querySelectorAll('.out-10');
+
+for (let i = 0; i < div10.length; i++) {
+    div10[i].onclick = f10;
+}
 // а тут цикл, похожий на предыдущее задание
 
 
