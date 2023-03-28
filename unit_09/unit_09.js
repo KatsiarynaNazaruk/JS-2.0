@@ -143,6 +143,9 @@ for (let i = 0; i < div10.length; i++) {
 
 
 function f11() {
+let a = document.createElement('div');
+a.innerHTML = 25;
+let out = document.querySelector(".out-11").appendChild(a);
 
 }
 
@@ -153,7 +156,10 @@ document.querySelector('.b-11').onclick = f11;
 
 
 function f12() {
-
+    let a = document.createElement('div');
+    a.innerHTML = 12;
+    a.classList.add('bg-12');
+    let out = document.querySelector(".out-12").appendChild(a);
 }
 
 document.querySelector('.b-12').onclick = f12;
@@ -162,7 +168,10 @@ document.querySelector('.b-12').onclick = f12;
 // Добавьте кнопку .b-13, которая запускает функцию f13. Функция создает через createElement div c текстом pushMe и добавляет ему класс bg-13. Также, созданному div добавляется событие onclick, по которому выполняется функция f13_1. Созданный div добавляется в out-13.
 
 function f13() {
-
+    let a = document.createElement('div');
+    a.innerHTML = "pushMe";
+    a.classList.add('bg-13');
+    let out = document.querySelector(".out-13-1").appendChild(a);
 }
 
 function f13_1() {
@@ -171,13 +180,17 @@ function f13_1() {
 
 
 document.querySelector('.b-13').onclick = f13;
+document.querySelector('.out-13-1').onclick = f13_1;
 
 //  Task 14
 // Добавьте кнопку .b-14, которая запускает функцию f14. Функция создает через createElement div c текстом 14 и добавляет ему класс bg-14. Созданный div добавляется в out-14 с помощью prepend.
 
 
 function f14() {
-
+    let a = document.createElement('div');
+    a.innerHTML = 14;
+    a.classList.add('bg-14');
+    let out = document.querySelector(".out-14").prepend(a);
 }
 
 document.querySelector('.b-14').onclick = f14;
@@ -186,7 +199,10 @@ document.querySelector('.b-14').onclick = f14;
 // Добавьте кнопку .b-15, которая запускает функцию f15. Функция создает через createElement div c текстом 15 и добавляет ему класс bg-15. Созданный div добавляется в out-15 с помощью before.
 
 function f15() {
-
+    let a = document.createElement('div');
+    a.innerHTML = 15;
+    a.classList.add('bg-15');
+    let out = document.querySelector(".out-15").before(a);
 }
 
 document.querySelector('.b-15').onclick = f15;
@@ -195,7 +211,10 @@ document.querySelector('.b-15').onclick = f15;
 // Добавьте кнопку .b-16, которая запускает функцию f16. Функция создает через createElement div c текстом 16 и добавляет ему класс bg-16. Созданный div добавляется в out-16 с помощью after.
 
 function f16() {
-
+    let a = document.createElement('div');
+    a.innerHTML = 16;
+    a.classList.add('bg-16');
+    let out = document.querySelector(".out-16").after(a);
 }
 
 document.querySelector('.b-16').onclick = f16;
@@ -204,7 +223,10 @@ document.querySelector('.b-16').onclick = f16;
 // Добавьте кнопку .b-17, которая запускает функцию f17. Функция создает через createElement div c текстом 17 и добавляет ему класс bg-17. Созданный div заменяет  out-17 с помощью replaceWith.
 
 function f17() {
-
+    let a = document.createElement('div');
+    a.innerHTML = 17;
+    a.classList.add('bg-17');
+    let out = document.querySelector(".out-17").replaceWith(a);
 }
 
 document.querySelector('.b-17').onclick = f17;
@@ -213,6 +235,9 @@ document.querySelector('.b-17').onclick = f17;
 // Добавьте кнопку .b-18, которая запускает функцию f18. Функция с помощью getAttribute получает data-b атрибут с параграф p-18 и выводит в out-18.
 
 function f18() {
+ let p = document.querySelector(".p-18");
+    let out = document.querySelector(".out-18")
+    out.innerHTML =  p.getAttribute('data-b');
 
 }
 
@@ -222,7 +247,11 @@ document.querySelector('.b-18').onclick = f18;
 // Добавьте кнопку .b-19, которая запускает функцию f19. Функция с помощью getAttribute получает data-b атрибут с параграфов p-19 и выводит в out-19 через пробел. Обратите внимание, что элементов p-19 больше одного.
 
 function f19() {
-
+    let p = document.querySelectorAll(".p-19");
+    let out = document.querySelector(".out-19")
+    for (let i = 0; i < p.length; i++) {
+        out.innerHTML +=  p[i].getAttribute('data-b') + " ";
+    }
 }
 
 document.querySelector('.b-19').onclick = f19;
@@ -231,7 +260,9 @@ document.querySelector('.b-19').onclick = f19;
 // Добавьте кнопку .b-20, которая запускает функцию f20. Функция с помощью setAttribute присваивает атрибут title="go" в div.out-20.
 
 function f20() {
-
+    let out = document.querySelector(".out-20")
+    out.setAttribute('title', "go");
+    out.innerHTML = out.getAttribute('title');
 }
 
 document.querySelector('.b-20').onclick = f20;
